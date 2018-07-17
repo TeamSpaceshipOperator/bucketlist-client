@@ -95,7 +95,6 @@ const signOut = function () {
   })
 }
 
-
 module.exports = {
   signIn,
   signUp,
