@@ -51,6 +51,10 @@ const signOutSuccess = function (signOutResponse) {
   delete store.user
 }
 
+const createRestaurantSuccess = function (response) {
+  console.log('response is ', response)
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -58,5 +62,6 @@ module.exports = {
   signInError,
   changePasswordSuccess,
   signOutSuccess,
-  changePasswordError
+  changePasswordError,
+  createRestaurantSuccess
 }
