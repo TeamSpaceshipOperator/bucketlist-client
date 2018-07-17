@@ -1,4 +1,5 @@
 const store = require('./store')
+const showRestaurantList = require('./templates/restaurant-listing.handlebars')
 
 const signUpSuccess = function (signUpResponse) {
   $('.SignUpFeedback').html('You have successfully registered.')
@@ -52,12 +53,14 @@ const signOutSuccess = function (signOutResponse) {
   delete store.user
 }
 
-const createRestaurantSuccess = function (response) {
-  console.log('response is ', response)
+const createRestaurantSuccess = function (Response) {
+  console.log('Response is ', Response)
 }
 
-const getRestaurantsSuccess = function (response) {
-  console.log('response is ', response)
+const getRestaurantsSuccess = function (getRestaurantsResponse) {
+  console.log('getRestaurantsResponse is ', getRestaurantsResponse)
+  const showRestaurantsHtml = showRestaurantList({ restaurants: getRestaurantsResponse.restaurants })
+  $('.content').html(showRestaurantsHtml)
 }
 
 module.exports = {
