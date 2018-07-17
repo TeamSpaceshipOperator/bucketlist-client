@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../config.js')
-const store = require('../store')
+const config = require('./config.js')
+const store = require('./store')
 
 const createRestaurant = function (data) {
   return $.ajax({
@@ -59,6 +59,7 @@ const destroyRestaurant = function (data) {
 
 // Auth requests below
 const signUp = function (data) {
+  console.log('data is ', data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
