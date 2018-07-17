@@ -39,38 +39,40 @@
     <button id="sign-out" type="submit"> Sign Out</button>
 
 
-    <h3> Create a bucketlist</h3>
-    <form id="create_list">
-      <input name="name" type="text" placeholder="Name"><br>
-      <input name="location" type="text" placeholder="location"><br>
+    <h3> Create a restaurant</h3>
+    <form id="create_restaurant">
+      <input name="restaurant[name]" type="text" placeholder="Name"><br>
+      <input name="restaurant[location]" type="text" placeholder="Location"><br>
       <button type="submit"> Create</button>
     </form>
 
-    <h3> modify/update a list</h3>
-    <form id="update_list">
+    <div id="create_content"></div>
+
+    <h3> modify/update a restaurant</h3>
+    <form id="update_restaurant">
     <input name="id" type="number" placeholder="ID">
     <button type="submit"> update</button>
   </form>
 
-  <h3> delete a list</h3>
-  <form id="delete_list">
+  <h3> delete a reataurant</h3>
+  <form id="delete_restaurant">
   <input name="id" type="number" placeholder="ID">
   <button type="submit"> delete</button>
 </form>
 
-<h3> view a list</h3>
-<form id="view_list">
+<h3> view a restaurant</h3>
+<form id="view_restaurant">
 <input name="id" type="number" placeholder="ID">
 <button type="submit"> view</button>
 </form>
 
-<h3> view all your list</h3>
-<form id="view_alllist">
+<h3> view all your restaurants</h3>
+<form id="view_all_restaurants">
 <button type="submit"> view your lists</button>
 </form>
 
-<h3> delete your entire lists</h3>
-<form id="delete_alllist">
+<h3> delete your entire restaurants</h3>
+<form id="delete_all_restaurants">
 <button type="submit"> delete your lists</button>
 </form>
 

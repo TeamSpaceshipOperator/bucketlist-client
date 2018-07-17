@@ -4,6 +4,7 @@ const config = require('./config.js')
 const store = require('./store')
 
 const createRestaurant = function (data) {
+  // data.user_id = store.user.id
   return $.ajax({
     // ajax options go here
     method: 'POST',
@@ -67,6 +68,7 @@ const signUp = function (data) {
   })
 }
 const signIn = function (data) {
+  console.log(data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
@@ -92,6 +94,7 @@ const signOut = function () {
     }
   })
 }
+
 
 module.exports = {
   signIn,

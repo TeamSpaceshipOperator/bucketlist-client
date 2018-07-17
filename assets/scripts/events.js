@@ -34,9 +34,27 @@ const onSignOut = function (event) {
     .catch(ui.signOutFail)
 }
 
+const onCreateRestaurant = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('getform data is ', data)
+  authApi.createRestaurant(data)
+    .then(ui.createRestaurantSuccess)
+    .catch(ui.createRestaurantFailure)
+}
+
+const onGetAllRestaurants = function (event) {
+  event.preventDefault()
+  authApi.getRestaurants()
+    .then(ui.getRestaurantsSuccess)
+    .catch(ui.getRestaurantsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateRestaurant,
+  onGetAllRestaurants
 }

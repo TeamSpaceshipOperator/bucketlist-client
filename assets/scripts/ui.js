@@ -11,6 +11,7 @@ const signUpError = function () {
 }
 
 const signInSuccess = function (response) {
+  console.log('res, ', response)
   store.user = response.user
   $('.signInFeedback').html('')
   // $('#sign-in-form').toggle()
@@ -51,6 +52,14 @@ const signOutSuccess = function (signOutResponse) {
   delete store.user
 }
 
+const createRestaurantSuccess = function (response) {
+  console.log('response is ', response)
+}
+
+const getRestaurantsSuccess = function (response) {
+  console.log('response is ', response)
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -58,5 +67,7 @@ module.exports = {
   signInError,
   changePasswordSuccess,
   signOutSuccess,
-  changePasswordError
+  changePasswordError,
+  createRestaurantSuccess,
+  getRestaurantsSuccess
 }
