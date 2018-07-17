@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../config.js')
-const store = require('../store')
+const config = require('./config.js')
+const store = require('./store')
 
 const createRestaurant = function (data) {
   return $.ajax({
@@ -57,19 +57,47 @@ const destroyRestaurant = function (data) {
   })
 }
 
-//
-// const createMulti = function (formData) {
-//   return $.ajax({
-//     // ajax options go here
-//     method: 'POST',
-//     url: 'http://localhost:4741/uploads',
-//     data: formData,
-//     processData: false,
-//     contentType: false
-//   })
-// }
+// Auth requests below
+const signUp = function (data) {
+  console.log('data is ', data)
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/sign-up',
+    data: data
+  })
+}
+const signIn = function (data) {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/sign-in',
+    data: data
+  })
+}
+const changePassword = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/change-password',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
+  signIn,
+  signUp,
+  signOut,
+  changePassword,
   createRestaurant,
   getRestaurant,
   getRestaurants,
