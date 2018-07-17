@@ -72,7 +72,7 @@ const signIn = function (data) {
     data: data
   })
 }
-const changePw = function (data) {
+const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
@@ -96,7 +96,7 @@ module.exports = {
   signIn,
   signUp,
   signOut,
-  changePw,
+  changePassword,
   createRestaurant,
   getRestaurant,
   getRestaurants,
