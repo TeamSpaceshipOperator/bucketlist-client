@@ -1,0 +1,13 @@
+{{#each restaurants as |restaurant|}}
+ <div class="display" data-id="{{restaurant.id}}">
+   <div class="row">
+     <div class="col-sm-1 glyphicon glyphicon-cutlery">
+   </div>
+   <div class="col-sm-11">{{restaurant.name}}</div>
+   <div class="row">
+     <div class="col-sm-1 glyphicon glyphicon-map-marker">
+   </div>
+   <div class="col-sm-11">{{restaurant.location}}</div>
+
+</div>
+{{/each}}
