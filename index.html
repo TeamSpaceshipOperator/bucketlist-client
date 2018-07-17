@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Bucketlist</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,68 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Bucketlist</h1>
+
+      <h3> User sign up </h3>
+      <form id="signUpForm">
+            <input name="credentials[email]" type="text" placeholder="email"><br>
+            <input name="credentials[password]" type="password" placeholder="password"><br>
+            <input name="credentials[password_confirmation]" type="password" placeholder="password_confirmation"><br>
+            <button type="submit"> Sign Up</button>
+          </form>
+
+          <h3>User sign In </h3>
+
+        <form id="signInForm">
+          <input name="credentials[email]" type="text" placeholder="email"><br>
+          <input name="credentials[password]" type="password" placeholder="password"><br>
+          <button type="submit"> Sign In</button>
+        </form>
+
+        <h3> Password change </h3>
+    <form id="password_change">
+      <input type="text" name="passwords[old]" placeholder="Old Password"><br>
+      <input type="text" name="passwords[new]" placeholder="New Password"><br>
+      <button type="submit"> Submit</button>
+    </form>
+    <button id="sign-out" type="submit"> Sign Out</button>
+
+
+    <h3> Create a bucketlist</h3>
+    <form id="create_list">
+      <input name="name" type="text" placeholder="Name"><br>
+      <input name="location" type="text" placeholder="location"><br>
+      <button type="submit"> Create</button>
+    </form>
+
+    <h3> modify/update a list</h3>
+    <form id="update_list">
+    <input name="id" type="number" placeholder="ID">
+    <button type="submit"> update</button>
+  </form>
+
+  <h3> delete a list</h3>
+  <form id="delete_list">
+  <input name="id" type="number" placeholder="ID">
+  <button type="submit"> delete</button>
+</form>
+
+<h3> view a list</h3>
+<form id="view_list">
+<input name="id" type="number" placeholder="ID">
+<button type="submit"> view</button>
+</form>
+
+<h3> view all your list</h3>
+<form id="view_alllist">
+<button type="submit"> view your lists</button>
+</form>
+
+<h3> delete your entire lists</h3>
+<form id="delete_alllist">
+<button type="submit"> delete your lists</button>
+</form>
+
+
     </body>
 </html>
