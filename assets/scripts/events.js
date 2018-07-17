@@ -43,10 +43,18 @@ const onCreateRestaurant = function (event) {
     .catch(ui.createRestaurantFailure)
 }
 
+const onGetAllRestaurants = function (event) {
+  event.preventDefault()
+  authApi.getRestaurants()
+    .then(ui.getRestaurantsSuccess)
+    .catch(ui.getRestaurantsFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateRestaurant
+  onCreateRestaurant,
+  onGetAllRestaurants
 }
