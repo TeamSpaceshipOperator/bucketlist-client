@@ -14,7 +14,7 @@
     <body>
       <div class="container">
       <h1>Bucketlist</h1>
-
+<div class="signed-out-view">
       <h3> User sign up </h3>
       <form id="signUpForm" class="SignUpFeedback">
             <input name="credentials[email]" type="text" placeholder="email"><br>
@@ -30,7 +30,8 @@
           <input name="credentials[password]" type="password" placeholder="password"><br>
           <button type="submit"> Sign In</button>
         </form>
-
+      </div>
+<div class="signed-in-view">
         <h3> Password change </h3>
     <form id="password_change" class="ChangePasswordFeedback">
       <input type="text" name="passwords[old]" placeholder="Old Password"><br>
@@ -57,7 +58,7 @@
     <button type="submit"> update</button>
   </form>
 
-  <h3> delete a reataurant</h3>
+  <h3> delete a restaurant</h3>
   <form id="delete_restaurant">
   <input name="id" type="text" placeholder="ID">
   <button type="submit"> delete</button>
@@ -80,6 +81,7 @@
 </form>
 
 <div class="content row col-sm-12">
+</div>
 </div>
 </div>
     </body>
