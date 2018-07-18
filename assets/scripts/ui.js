@@ -63,6 +63,10 @@ const getRestaurantsSuccess = function (getRestaurantsResponse) {
   $('.content').html(showRestaurantsHtml)
 }
 
+const destroyRestaurantSuccess = function (response) {
+  console.log('destroy restaurant response is ', response)
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -72,5 +76,6 @@ module.exports = {
   signOutSuccess,
   changePasswordError,
   createRestaurantSuccess,
-  getRestaurantsSuccess
+  getRestaurantsSuccess,
+  destroyRestaurantSuccess
 }

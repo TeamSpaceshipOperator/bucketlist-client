@@ -7,10 +7,12 @@ const events = require('./events')
 // require('./example')
 
 $(() => {
+  // events.addHandlers()
   $('#signUpForm').on('submit', events.onSignUp)
   $('#signInForm').on('submit', events.onSignIn)
   $('#password_change').on('submit', events.onChangePassword)
   $('#sign-out').click(events.onSignOut)
   $('#create_restaurant').on('submit', events.onCreateRestaurant)
   $('#view_all_restaurants').on('submit', events.onGetAllRestaurants)
+  $('.content').on('click', '.delete-button', events.onDestroyRestaurant)
 })

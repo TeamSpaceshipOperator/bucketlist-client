@@ -51,7 +51,7 @@ const updateRestaurant = function (data) {
 const destroyRestaurant = function (data) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/restaurants/' + data.id,
+    url: config.apiUrl + '/restaurants/' + data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

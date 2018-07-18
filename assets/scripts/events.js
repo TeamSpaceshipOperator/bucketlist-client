@@ -50,11 +50,26 @@ const onGetAllRestaurants = function (event) {
     .catch(ui.getRestaurantsFailure)
 }
 
+const onDestroyRestaurant = function (event) {
+  event.preventDefault()
+  const data = $(this).data('id')
+  console.log('this is', this.data)
+  console.log('data is, ', data)
+  authApi.destroyRestaurant(data)
+    .then(ui.destroyRestaurantSuccess)
+    .catch(ui.destroyRestaurantFailure)
+}
+
+// const addHandlers = () => {
+//   $('.content').on('click', '.delete-button', onDestroyRestaurant)
+// }
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
   onCreateRestaurant,
-  onGetAllRestaurants
+  onGetAllRestaurants,
+  onDestroyRestaurant
+  // addHandlers
 }
