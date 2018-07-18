@@ -65,9 +65,8 @@ const getRestaurantsSuccess = function (getRestaurantsResponse) {
   $('.content').html(showRestaurantsHtml)
 }
 
-const deleteRestaurantSuccess = function (deleteRestaurantResponse) {
-  console.log('restaurant is deleted')
-}
+const destroyRestaurantSuccess = function (response) {
+  console.log('destroy restaurant response is ', response)
 
 const deleteRestaurantFailure = function () {
   console.log('restaurant was not deleted')
@@ -88,6 +87,7 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
 
 const viewRestaurantFailure = function () {
   console.log('the res view failed here')
+
 }
 
 module.exports = {
@@ -100,7 +100,7 @@ module.exports = {
   changePasswordError,
   createRestaurantSuccess,
   getRestaurantsSuccess,
-  deleteRestaurantSuccess,
+  destroyRestaurantSuccess,
   deleteRestaurantFailure,
   updateRestaurantSuccess,
   updateRestaurantFail,

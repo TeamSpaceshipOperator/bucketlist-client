@@ -50,6 +50,16 @@ const onGetAllRestaurants = function (event) {
     .catch(ui.getRestaurantsFailure)
 }
 
+const onDestroyRestaurant = function (event) {
+  event.preventDefault()
+  const data = $(this).data('id')
+  console.log('this is', this.data)
+  console.log('data is, ', data)
+  authApi.destroyRestaurant(data)
+    .then(ui.destroyRestaurantSuccess)
+    .catch(ui.destroyRestaurantFailure)
+}
+
 const onDeleteRestaurant = function (event) {
   console.log('event for delete is ', event)
   event.preventDefault()
@@ -85,7 +95,7 @@ module.exports = {
   onSignOut,
   onCreateRestaurant,
   onGetAllRestaurants,
-  onDeleteRestaurant,
+  onDestroyRestaurant,
   onUpdateRestaurant,
   onViewRestaurant
 }

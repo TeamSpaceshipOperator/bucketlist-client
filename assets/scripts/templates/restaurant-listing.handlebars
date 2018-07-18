@@ -1,17 +1,25 @@
 {{#each restaurants as |restaurant|}}
- <div class="display col-sm-12" data-id="{{restaurant.id}}">
+
+ <div class="display col-sm-12" data-id="{{restaurant._id}}">
+   <form>
    <div class="row">
-     <div class="col-sm-1 glyphicon glyphicon-cutlery">
-   </div>
-   <div class="col-sm-11">{{restaurant.name}}
+     <div class="col-sm-1 glyphicon glyphicon-cutlery"></div>
+   <div class="col-sm-11">
+     <p class="handlebars-name">{{restaurant.name}}</p>
+     <input name="restaurant[{{restaurant.name}}]" type="text" placeholder="Name">
    </div>
  </div>
    <hr>
    <div class="row">
      <div class="col-sm-1 glyphicon glyphicon-map-marker">
    </div>
-   <div class="col-sm-11">{{restaurant.location}}
+   <div class="col-sm-11">
+     <p>{{restaurant.location}}</p>
+     <input name="restaurant[{{restaurant.location}}]" type="text" placeholder="Location">
    </div>
+   <button class="update-button" data-id="{{restaurant._id}}">Update</button>
+    <button class="delete-button" data-id="{{restaurant._id}}">Delete</button>
 </div>
+</form>
 </div>
 {{/each}}
