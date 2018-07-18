@@ -2,6 +2,7 @@
 
 const config = require('./config.js')
 const store = require('./store')
+// const yelp = require('yelp-fusion')
 
 const createRestaurant = function (data) {
   // data.user_id = store.user.id
@@ -22,6 +23,18 @@ const getRestaurants = function () {
     url: config.apiUrl + '/restaurants',
     headers: {
       Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const searchRestaurant = function (data) {
+  console.log('data is  ', data)
+  return $.ajax({
+    method: 'GET',
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${data.location.location}`,
+    data: data,
+    headers: {
+      Authorization: 'Bearer w5V24zygjERXy-MmDuM6-vfTfxqF818wsWfp4y0h8r5llu3FWQ6sIjNTLRfpJ5U7C_nHF1R3T4e-xEU8fp8AWZMMeW_UJiOHfaLlhsLRaDZhzbKrT_30X6uGsWFPW3Yx'
     }
   })
 }
@@ -105,5 +118,6 @@ module.exports = {
   getRestaurant,
   getRestaurants,
   updateRestaurant,
-  destroyRestaurant
+  destroyRestaurant,
+  searchRestaurant
 }

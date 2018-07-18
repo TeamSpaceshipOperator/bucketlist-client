@@ -88,6 +88,15 @@ const onViewRestaurant = function (event) {
     .catch(ui.viewRestaurantFailure)
 }
 
+const onSearchRestaurant = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('i was trying to search for ', data)
+  authApi.searchRestaurant(data)
+    .then(ui.searchSuccess)
+    .catch(ui.searchFail)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -97,5 +106,6 @@ module.exports = {
   onGetAllRestaurants,
   onDestroyRestaurant,
   onUpdateRestaurant,
-  onViewRestaurant
+  onViewRestaurant,
+  onSearchRestaurant
 }

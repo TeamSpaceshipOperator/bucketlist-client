@@ -88,7 +88,14 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
 
 const viewRestaurantFailure = function () {
   console.log('the res view failed here')
+}
 
+const searchSuccess = function (searchSuccessResponse) {
+  console.log('the search got back ', searchSuccessResponse)
+}
+
+const searchFail = function (searchFailResponse) {
+  console.log('the search failed here ', searchFailResponse)
 }
 
 module.exports = {
@@ -106,5 +113,7 @@ module.exports = {
   updateRestaurantSuccess,
   updateRestaurantFail,
   viewRestaurantSuccess,
-  viewRestaurantFailure
+  viewRestaurantFailure,
+  searchSuccess,
+  searchFail
 }
