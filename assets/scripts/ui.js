@@ -88,7 +88,6 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
 
 const viewRestaurantFailure = function () {
   console.log('the res view failed here')
-
 }
 
 module.exports = {
