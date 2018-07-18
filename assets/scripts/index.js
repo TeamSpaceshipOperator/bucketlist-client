@@ -13,4 +13,7 @@ $(() => {
   $('#sign-out').click(events.onSignOut)
   $('#create_restaurant').on('submit', events.onCreateRestaurant)
   $('#view_all_restaurants').on('submit', events.onGetAllRestaurants)
+  $('#delete_restaurant').on('submit', events.onDeleteRestaurant)
+  $('#update_restaurant').on('submit', events.onUpdateRestaurant)
+  $('#view_restaurant').on('submit', events.onViewRestaurant)
 })

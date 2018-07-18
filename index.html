@@ -51,19 +51,21 @@
 
     <h3> modify/update a restaurant</h3>
     <form id="update_restaurant">
-    <input name="id" type="number" placeholder="ID">
+    <input name="id" type="text" placeholder="ID"><br>
+    <input name="restaurant[name]" type="text" placeholder="Name"><br>
+    <input name="location[location]" type="text" placeholder="location"><br>
     <button type="submit"> update</button>
   </form>
 
   <h3> delete a reataurant</h3>
   <form id="delete_restaurant">
-  <input name="id" type="number" placeholder="ID">
+  <input name="id" type="text" placeholder="ID">
   <button type="submit"> delete</button>
 </form>
 
 <h3> view a restaurant</h3>
 <form id="view_restaurant">
-<input name="id" type="number" placeholder="ID">
+<input name="id" type="text" placeholder="ID">
 <button type="submit"> view</button>
 </form>
 
@@ -76,6 +78,8 @@
 <form id="delete_all_restaurants">
 <button type="submit"> delete your lists</button>
 </form>
+<div class="view_row">
+</div>
 <div class="content row">
 </div>
 </div>

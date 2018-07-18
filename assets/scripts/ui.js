@@ -63,6 +63,31 @@ const getRestaurantsSuccess = function (getRestaurantsResponse) {
   $('.content').html(showRestaurantsHtml)
 }
 
+const deleteRestaurantSuccess = function (deleteRestaurantResponse) {
+  console.log('restaurant is deleted')
+}
+
+const deleteRestaurantFailure = function () {
+  console.log('restaurant was not deleted')
+}
+
+const updateRestaurantSuccess = function (updateRestaurantResponse) {
+  console.log('update success is ', updateRestaurantResponse)
+}
+
+const updateRestaurantFail = function () {
+  console.log('res update failed here')
+}
+
+const viewRestaurantSuccess = function (viewRestaurantResponse) {
+  console.log('view res succeeded here', viewRestaurantResponse)
+  $('.view_row').html(viewRestaurantResponse.restaurant.name)
+}
+
+const viewRestaurantFailure = function () {
+  console.log('the res view failed here')
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -72,5 +97,11 @@ module.exports = {
   signOutSuccess,
   changePasswordError,
   createRestaurantSuccess,
-  getRestaurantsSuccess
+  getRestaurantsSuccess,
+  deleteRestaurantSuccess,
+  deleteRestaurantFailure,
+  updateRestaurantSuccess,
+  updateRestaurantFail,
+  viewRestaurantSuccess,
+  viewRestaurantFailure
 }
