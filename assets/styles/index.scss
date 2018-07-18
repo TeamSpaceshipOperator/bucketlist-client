@@ -1,3 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.display {
+  background-color: rgb(255, 252, 163);
+  border-color: #000;
+  border: 2px;
+  // float: left;
+  margin: 20px;
+  width: 300px;
+  height: 400px;
+}
