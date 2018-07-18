@@ -18,30 +18,34 @@
 <div class="signed-out-view">
 
       <h3> User sign up </h3>
-      <form id="signUpForm" class="SignUpFeedback">
+      <form id="signUpForm">
             <input name="credentials[email]" type="text" placeholder="email"><br>
             <input name="credentials[password]" type="password" placeholder="password"><br>
             <input name="credentials[password_confirmation]" type="password" placeholder="password_confirmation"><br>
             <button type="submit"> Sign Up</button>
+            <p class="signUpFeedback"></p>
           </form>
 
           <h3>User sign In </h3>
 
-        <form id="signInForm" class="signInFeedback">
+        <form id="signInForm">
           <input name="credentials[email]" type="text" placeholder="email"><br>
           <input name="credentials[password]" type="password" placeholder="password"><br>
           <button type="submit"> Sign In</button>
+          <p class="signInFeedback"></p>
         </form>
       </div>
 
 <div class="signed-in-view">
-
-        <h3> Password change </h3>
-    <form id="password_change" class="ChangePasswordFeedback">
+    <p class="emailDisplay"></p>
+        <h3> Change Password </h3>
+    <form id="password_change">
       <input type="text" name="passwords[old]" placeholder="Old Password"><br>
       <input type="text" name="passwords[new]" placeholder="New Password"><br>
       <button type="submit"> Submit</button>
+      <p class="changePasswordFeedback"></p>
     </form>
+    <br>
     <button id="sign-out" type="submit"> Sign Out</button>
 
     <h3> Create a restaurant</h3>
@@ -49,6 +53,7 @@
       <input name="restaurant[name]" type="text" placeholder="Name"><br>
       <input name="restaurant[location]" type="text" placeholder="Location"><br>
       <button type="submit"> Create</button>
+      <p class="createRestaurantFeedback"></p>
     </form>
 
     <div id="create_content"></div>

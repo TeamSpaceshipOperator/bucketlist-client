@@ -7,7 +7,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function () {
-  $('.SignUpFeedback').html('Email unavailable or password mismatch.')
+  $('.signUpFeedback').html('Email unavailable or password mismatch.')
   $('#signUpForm')[0].reset()
 }
 
@@ -31,12 +31,12 @@ const signInError = function () {
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
-  $('.ChangePasswordFeedback').html('You have successfully changed your password.')
+  $('.changePasswordFeedback').html('You have successfully changed your password.')
   $('#password_change')[0].reset()
 }
 
 const changePasswordError = function () {
-  $('.ChangePasswordFeedback').html('Password is incorrect.')
+  $('.changePasswordFeedback').html('Current password is incorrect.')
   $('#password_change')[0].reset()
 }
 
@@ -45,6 +45,7 @@ const signOutSuccess = function (signOutResponse) {
   // $('#change-password-form').toggle()
   // $('#sign-out-button').toggle()
   // $('#sign-up-form').toggle()
+  $('.createRestaurantFeedback').html('')
   $('.emailDisplay').html('')
   $('.signInFeedback').html('')
   $('.ChangePasswordFeedback').html('')
@@ -57,6 +58,12 @@ const signOutSuccess = function (signOutResponse) {
 
 const createRestaurantSuccess = function (Response) {
   console.log('Response is ', Response)
+  $('.createRestaurantFeedback').html('')
+}
+
+const createRestaurantFailure = function (response) {
+  console.error(response)
+  $('.createRestaurantFeedback').html('Please fill both fields.')
 }
 
 const getRestaurantsSuccess = function (getRestaurantsResponse) {
@@ -105,5 +112,6 @@ module.exports = {
   updateRestaurantSuccess,
   updateRestaurantFail,
   viewRestaurantSuccess,
-  viewRestaurantFailure
+  viewRestaurantFailure,
+  createRestaurantFailure
 }
