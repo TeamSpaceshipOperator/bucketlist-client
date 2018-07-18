@@ -63,15 +63,15 @@ const onDestroyRestaurant = function (event) {
     .catch(ui.destroyRestaurantFailure)
 }
 
-const onDeleteRestaurant = function (event) {
-  console.log('event for delete is ', event)
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log('second event for delete is ', data)
-  authApi.destroyRestaurant(data)
-    .then(ui.deleteRestaurantSuccess)
-    .catch(ui.deleteRestaurantFailure)
-}
+// const onDeleteRestaurant = function (event) {
+//   console.log('event for delete is ', event)
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log('second event for delete is ', data)
+//   authApi.destroyRestaurant(data)
+//     .then(ui.deleteRestaurantSuccess)
+//     .catch(ui.deleteRestaurantFailure)
+// }
 
 const onUpdateRestaurant = function (event) {
   event.preventDefault()

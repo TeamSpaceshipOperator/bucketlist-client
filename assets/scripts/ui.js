@@ -25,9 +25,10 @@ const signInSuccess = function (response) {
   $('.signed-out-view').toggle()
 }
 
-const signInError = function () {
+const signInError = function (error) {
   $('.signInFeedback').html('Username or password is incorrect.')
   $('#signInForm')[0].reset()
+  console.error(error)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -76,16 +77,16 @@ const destroyRestaurantSuccess = function (response) {
   console.log('destroy restaurant response is ', response)
 }
 
-const deleteRestaurantFailure = function () {
-  console.log('restaurant was not deleted')
-}
+// const deleteRestaurantFailure = function () {
+//   console.log('restaurant was not deleted')
+// }
 
 const updateRestaurantSuccess = function (updateRestaurantResponse) {
   console.log('update success is ', updateRestaurantResponse)
 }
 
-const updateRestaurantFail = function () {
-  console.log('res update failed here')
+const updateRestaurantFail = function (error) {
+  console.error(error)
 }
 
 const viewRestaurantSuccess = function (viewRestaurantResponse) {
@@ -93,8 +94,8 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
   $('.view_row').html(viewRestaurantResponse.restaurant.name)
 }
 
-const viewRestaurantFailure = function () {
-  console.log('the res view failed here')
+const viewRestaurantFailure = function (error) {
+  console.error(error)
 }
 
 module.exports = {
