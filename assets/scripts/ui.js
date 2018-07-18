@@ -67,6 +67,7 @@ const getRestaurantsSuccess = function (getRestaurantsResponse) {
 
 const destroyRestaurantSuccess = function (response) {
   console.log('destroy restaurant response is ', response)
+}
 
 const deleteRestaurantFailure = function () {
   console.log('restaurant was not deleted')
