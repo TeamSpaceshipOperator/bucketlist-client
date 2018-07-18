@@ -109,7 +109,7 @@ module.exports = {
   createRestaurantSuccess,
   getRestaurantsSuccess,
   destroyRestaurantSuccess,
-  deleteRestaurantFailure,
+  // deleteRestaurantFailure,
   updateRestaurantSuccess,
   updateRestaurantFail,
   viewRestaurantSuccess,
