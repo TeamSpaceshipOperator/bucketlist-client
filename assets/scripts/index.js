@@ -15,4 +15,7 @@ $(() => {
   $('#create_restaurant').on('submit', events.onCreateRestaurant)
   $('#view_all_restaurants').on('submit', events.onGetAllRestaurants)
   $('.content').on('click', '.delete-button', events.onDestroyRestaurant)
+  $('#delete_restaurant').on('submit', events.onDeleteRestaurant)
+  $('#update_restaurant').on('submit', events.onUpdateRestaurant)
+  $('#view_restaurant').on('submit', events.onViewRestaurant)
 })

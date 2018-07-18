@@ -60,9 +60,34 @@ const onDestroyRestaurant = function (event) {
     .catch(ui.destroyRestaurantFailure)
 }
 
-// const addHandlers = () => {
-//   $('.content').on('click', '.delete-button', onDestroyRestaurant)
-// }
+const onDeleteRestaurant = function (event) {
+  console.log('event for delete is ', event)
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('second event for delete is ', data)
+  authApi.destroyRestaurant(data)
+    .then(ui.deleteRestaurantSuccess)
+    .catch(ui.deleteRestaurantFailure)
+}
+
+const onUpdateRestaurant = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('update for restaurant is ', data)
+  authApi.updateRestaurant(data)
+    .then(ui.updateRestaurantSuccess)
+    .catch(ui.updateRestaurantFail)
+}
+
+const onViewRestaurant = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('the restaurant for view is ', data)
+  authApi.getRestaurant(data)
+    .then(ui.viewRestaurantSuccess)
+    .catch(ui.viewRestaurantFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -70,6 +95,7 @@ module.exports = {
   onSignOut,
   onCreateRestaurant,
   onGetAllRestaurants,
-  onDestroyRestaurant
-  // addHandlers
+  onDestroyRestaurant,
+  onUpdateRestaurant,
+  onViewRestaurant
 }

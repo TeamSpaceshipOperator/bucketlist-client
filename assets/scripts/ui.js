@@ -65,6 +65,27 @@ const getRestaurantsSuccess = function (getRestaurantsResponse) {
 
 const destroyRestaurantSuccess = function (response) {
   console.log('destroy restaurant response is ', response)
+
+const deleteRestaurantFailure = function () {
+  console.log('restaurant was not deleted')
+}
+
+const updateRestaurantSuccess = function (updateRestaurantResponse) {
+  console.log('update success is ', updateRestaurantResponse)
+}
+
+const updateRestaurantFail = function () {
+  console.log('res update failed here')
+}
+
+const viewRestaurantSuccess = function (viewRestaurantResponse) {
+  console.log('view res succeeded here', viewRestaurantResponse)
+  $('.view_row').html(viewRestaurantResponse.restaurant.name)
+}
+
+const viewRestaurantFailure = function () {
+  console.log('the res view failed here')
+
 }
 
 module.exports = {
@@ -77,5 +98,10 @@ module.exports = {
   changePasswordError,
   createRestaurantSuccess,
   getRestaurantsSuccess,
-  destroyRestaurantSuccess
+  destroyRestaurantSuccess,
+  deleteRestaurantFailure,
+  updateRestaurantSuccess,
+  updateRestaurantFail,
+  viewRestaurantSuccess,
+  viewRestaurantFailure
 }
