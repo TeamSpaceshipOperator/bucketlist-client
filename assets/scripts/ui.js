@@ -21,7 +21,8 @@ const signInSuccess = function (response) {
   // $('#sign-up-form').toggle()
   $('.emailDisplay').html('Signed in as: ' + store.user.email)
   $('#signInForm')[0].reset()
-  // $('.sign-in-hider').toggle()
+  $('.signed-in-view').toggle()
+  $('.signed-out-view').toggle()
 }
 
 const signInError = function () {
@@ -48,7 +49,8 @@ const signOutSuccess = function (signOutResponse) {
   $('.signInFeedback').html('')
   $('.ChangePasswordFeedback').html('')
   $('.SignUpFeedback').html('')
-  // $('.sign-in-hider').toggle()
+  $('.signed-in-view').toggle()
+  $('.signed-out-view').toggle()
   $('#password_change')[0].reset()
   delete store.user
 }
