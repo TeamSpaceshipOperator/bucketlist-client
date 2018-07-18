@@ -41,6 +41,7 @@ const onCreateRestaurant = function (event) {
   console.log('getform data is ', data)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.createRestaurantFailure)
 }
 
@@ -58,6 +59,7 @@ const onDestroyRestaurant = function (event) {
   console.log('data is, ', data)
   authApi.destroyRestaurant(data)
     .then(ui.destroyRestaurantSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.destroyRestaurantFailure)
 }
 

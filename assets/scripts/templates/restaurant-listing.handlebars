@@ -3,6 +3,9 @@
  <div class="display col-sm-12" data-id="{{restaurant._id}}">
    <form class="handlebars-form" data-id="{{restaurant._id}}">
    <div class="row">
+     <div class="col-sm-11"></div>
+     <div class="col align-self-end"><a href="#" class="delete-button" data-id="{{restaurant._id}}"><span class="glyphicon glyphicon-remove"></span></a></div>
+
      <div class="col-sm-1 glyphicon glyphicon-cutlery"></div>
    <div class="col-sm-11">
      <p class="handlebars-display">{{restaurant.name}}</p>
@@ -19,7 +22,6 @@
    </div>
    <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Update</button>
    <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Update</button>
-    <button class="delete-button" data-id="{{restaurant._id}}">Delete</button>
 </div>
 </form>
 </div>
