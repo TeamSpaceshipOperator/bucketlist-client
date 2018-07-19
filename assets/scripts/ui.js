@@ -2,12 +2,14 @@ const store = require('./store')
 const showRestaurantList = require('./templates/restaurant-listing.handlebars')
 
 const signUpSuccess = function (signUpResponse) {
-  $('.SignUpFeedback').html('You have successfully registered.')
+  // $('.SignUpFeedback').html('You have successfully registered.')
+  $('#success').modal()
   $('#signUpForm')[0].reset()
 }
 
 const signUpError = function () {
-  $('.signUpFeedback').html('Email unavailable or password mismatch.')
+  // $('.signUpFeedback').html('Email unavailable or password mismatch.')
+  $('#sign-up-fail').modal()
   $('#signUpForm')[0].reset()
 }
 
@@ -26,18 +28,21 @@ const signInSuccess = function (response) {
 }
 
 const signInError = function (error) {
-  $('.signInFeedback').html('Username or password is incorrect.')
+  // $('.signInFeedback').html('Username or password is incorrect.')
+  $('#sign-in-fail').modal()
   $('#signInForm')[0].reset()
   console.error(error)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
-  $('.changePasswordFeedback').html('You have successfully changed your password.')
+  // $('.changePasswordFeedback').html('You have successfully changed your password.')
+  $('#success').modal()
   $('#password_change')[0].reset()
 }
 
 const changePasswordError = function () {
-  $('.changePasswordFeedback').html('Current password is incorrect.')
+  // $('.changePasswordFeedback').html('Current password is incorrect.')
+  $('#password-fail').modal()
   $('#password_change')[0].reset()
 }
 
