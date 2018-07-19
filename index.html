@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
     <body>
 
@@ -125,6 +126,13 @@
               <input name="restaurant[location]" type="text" placeholder="Location"><br>
               <button type="submit"> Create</button>
             </form>
+  
+             <form  id="rest_search">
+            <h3>Search for Nearby Restaurants </h3>
+              <input name="term[term]" type="text" placeholder="keyword earch"><br>
+               <input name="location[location]" type="text" placeholder="enter a location"><br>
+                <button type="submit"> get restaurants</button>
+             </form>
 
             <div id="create_content"></div>
 

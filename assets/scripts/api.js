@@ -2,6 +2,7 @@
 
 const config = require('./config.js')
 const store = require('./store')
+// const yelp = require('yelp-fusion')
 
 const createRestaurant = function (data) {
   // data.user_id = store.user.id
@@ -20,6 +21,18 @@ const getRestaurants = function () {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/restaurants',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const searchRestaurant = function (data) {
+  console.log('data is  ', data)
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/search',
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -105,5 +118,6 @@ module.exports = {
   getRestaurant,
   getRestaurants,
   updateRestaurant,
-  destroyRestaurant
+  destroyRestaurant,
+  searchRestaurant
 }

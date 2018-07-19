@@ -88,6 +88,14 @@ const onViewRestaurant = function (event) {
     .catch(ui.viewRestaurantFailure)
 }
 
+const onSearchRestaurant = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('i was trying to search for ', data)
+  authApi.searchRestaurant(data)
+    .then(ui.searchSuccess)
+    .catch(ui.searchFail)
+  
 const showUpdateForm = function (event) {
   event.preventDefault()
   $('.handlebars-form-hider').show()
@@ -104,5 +112,7 @@ module.exports = {
   onDestroyRestaurant,
   onUpdateRestaurant,
   onViewRestaurant,
+  onSearchRestaurant,
+  onDeleteRestaurant
   showUpdateForm
 }
