@@ -65,7 +65,7 @@ const signOutSuccess = function (signOutResponse) {
 
 const createRestaurantSuccess = function (Response) {
   console.log('Response is ', Response)
-  $('.createRestaurantFeedback').html('')
+  $('#add-success').modal()
 }
 
 const createRestaurantFailure = function (response) {
