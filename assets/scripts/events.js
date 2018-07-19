@@ -67,20 +67,11 @@ const onDestroyRestaurant = function (event) {
     .catch(ui.destroyRestaurantFailure)
 }
 
-// const onDeleteRestaurant = function (event) {
-//   console.log('event for delete is ', event)
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log('second event for delete is ', data)
-//   authApi.destroyRestaurant(data)
-//     .then(ui.deleteRestaurantSuccess)
-//     .catch(ui.deleteRestaurantFailure)
-// }
-
 const onUpdateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(this).data('id')
+  console.log('update id is ', id)
   authApi.updateRestaurant(data, id)
     .then(ui.updateRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -108,15 +99,6 @@ const showUpdateForm = function (event) {
   $('.handlebars-form-hider').show()
   $('.handlebars-display').hide()
 }
-
-// const onAddRestaurant = function (event) {
-//   console.log('event is ', event)
-//   event.preventDefault()
-//   authApi.createRestaurant(data)
-//   console.log('this is what we are adding as ', data)
-//     .then(ui.addSucess)
-//     .catch(ui.addFail)
-// }
 
 module.exports = {
   onSignUp,

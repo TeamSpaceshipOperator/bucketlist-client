@@ -3,11 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .display {
-  background-color: rgb(255, 252, 163);
+  background-color: #F1E3F3;
   border-color: #000;
   border: 2px;
   // float: left;
-  margin: 20px;
+  margin: 0px 20px 40px 20px;
   width: 300px;
   // height: 500px;
 }
@@ -26,4 +26,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 hr {
   margin: 2px 0;
+}
+
+body {
+  background-color: #62BFED;
+}
+
+.left-box {
+  background-color: #3590F3;
+  height: 350px;
 }

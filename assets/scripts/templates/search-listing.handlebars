@@ -24,7 +24,7 @@
    </div>
    <form class="handlebars-add-form">
      <input type="hidden" name="restaurant[name]" value="{{restaurant.name}}">
-     <input type="hidden" name="restaurant[location]" value="{{restaurant.location.address1}}">
+     <input type="hidden" name="restaurant[location]" value="{{restaurant.location.address1}}, {{restaurant.location.city}}, {{restaurant.location.zip_code}}">
      <input type="hidden" name="restaurant[imgUrl]" value="{{restaurant.image_url}}">
    <button type="submit" class="handlebars-form-submit">Add to list</button>
  </form>
