@@ -10,10 +10,8 @@
        </div>
      </div>
      <div class="row">
-       <div class="col-sm-1 glyphicon glyphicon-cutlery"></div>
-     <div class="col-sm-11">
-       <p class="handlebars-display">{{restaurant.name}}</p>
-       <input class="handlebars-form-hider" name="restaurant[name]" type="text" placeholder="{{restaurant.name}}">
+     <div class="col-sm-12">
+       <p><span class="glyphicon glyphicon-cutlery"></span>  {{restaurant.name}}</p>
      </div>
    </div>
      <hr>
@@ -21,21 +19,20 @@
        <div class="col-sm-1 glyphicon glyphicon-map-marker">
      </div>
      <div class="col-sm-11">
-       <p class="handlebars-display">{{restaurant.location.address1}} <br> {{restaurant.location.city}}, {{restaurant.location.zip_code}}</p>
-       <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
+       <p>{{restaurant.location}}</p>
      </div>
    </div>
-   <form>
-     <div class="col-sm-11">
-       <p class="handlebars-display">{{restaurant.location}}</p>
-       <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
-     </div>
-     <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Update</button>
-     <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Update</button>
+   <hr>
+   <form class="add-note-form">
+
+       <p class="handlebars-display"><span class="glyphicon glyphicon-pencil"></span>{{restaurant.notes}}</p>
+       <input class="handlebars-form-hider" name="restaurant[notes]" type="text" placeholder="{{restaurant.notes}}">
+     <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Add Note</button>
+     <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Note</button>
    </div>
  </form>
 
-  
+
 
    </div>
 </div>

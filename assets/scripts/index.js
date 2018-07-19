@@ -18,9 +18,10 @@ $(() => {
   $('#view_all_restaurants').on('submit', events.onGetAllRestaurants)
 
   $('.content').on('click', '.delete-button', events.onDestroyRestaurant)
-  // $('.content').on('submit', '.handlebars-form', events.onUpdateRestaurant)
+  $('.content').on('submit', '.add-note-form', events.onUpdateRestaurant)
   // $('.content').on('click', '.handlebars-update-button', events.showUpdateForm)
   $('.content').on('submit', '.handlebars-add-form', events.onCreateRestaurant)
+  $('.content').on('click', '.handlebars-update-button', events.showUpdateForm)
 
   $('#delete_restaurant').on('submit', events.onDeleteRestaurant)
   $('#update_restaurant').on('submit', events.onUpdateRestaurant)
