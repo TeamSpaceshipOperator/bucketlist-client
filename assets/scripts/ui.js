@@ -1,5 +1,6 @@
 const store = require('./store')
 const showRestaurantList = require('./templates/restaurant-listing.handlebars')
+const showSearchList = require('./templates/search-listing.handlebars')
 
 const signUpSuccess = function (signUpResponse) {
   // $('.SignUpFeedback').html('You have successfully registered.')
@@ -99,8 +100,11 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
   $('.view_row').html(viewRestaurantResponse.restaurant.name)
 }
 
-const searchSuccess = function (searchSuccessResponse) {
-  console.log('the search got back ', searchSuccessResponse)
+const searchSuccess = function (searchResponse) {
+  console.log('search response is ', searchResponse)
+  console.log('businessess is ', searchResponse.search.jsonBody.businesses)
+  const showSearchHtml = showSearchList({ restaurants: searchResponse.search.jsonBody.businesses })
+  $('.content').html(showSearchHtml)
 }
 
 const searchFail = function (searchFailResponse) {
