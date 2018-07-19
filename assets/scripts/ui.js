@@ -99,16 +99,13 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
   $('.view_row').html(viewRestaurantResponse.restaurant.name)
 }
 
-const viewRestaurantFailure = function () {
-  console.log('the res view failed here')
-}
-
 const searchSuccess = function (searchSuccessResponse) {
   console.log('the search got back ', searchSuccessResponse)
 }
 
 const searchFail = function (searchFailResponse) {
   console.log('the search failed here ', searchFailResponse)
+}
 
 const viewRestaurantFailure = function (error) {
   console.error(error)
@@ -131,6 +128,6 @@ module.exports = {
   viewRestaurantSuccess,
   viewRestaurantFailure,
   searchSuccess,
-  searchFail
+  searchFail,
   createRestaurantFailure
 }
