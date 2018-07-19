@@ -38,7 +38,6 @@ const onSignOut = function (event) {
 const onCreateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('getform data is ', data)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -55,8 +54,6 @@ const onGetAllRestaurants = function () {
 const onDestroyRestaurant = function (event) {
   event.preventDefault()
   const data = $(this).data('id')
-  console.log('this is', this.data)
-  console.log('data is, ', data)
   authApi.destroyRestaurant(data)
     .then(ui.destroyRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -77,8 +74,6 @@ const onUpdateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(this).data('id')
-  console.log('update id is', id)
-  console.log('update for restaurant is ', data)
   authApi.updateRestaurant(data, id)
     .then(ui.updateRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -88,14 +83,12 @@ const onUpdateRestaurant = function (event) {
 const onViewRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('the restaurant for view is ', data)
   authApi.getRestaurant(data)
     .then(ui.viewRestaurantSuccess)
     .catch(ui.viewRestaurantFailure)
 }
 
 const showUpdateForm = function (event) {
-  console.log('event is', event)
   event.preventDefault()
   $('.handlebars-form-hider').show()
   $('.handlebars-display').hide()
