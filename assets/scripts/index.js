@@ -1,3 +1,4 @@
+
 'use strict'
 
 // use require with a reference to bundle the file and use it in this file
@@ -8,6 +9,7 @@ const events = require('./events')
 
 $(() => {
   // events.addHandlers()
+  $('.signed-in-view').hide()
   $('#signUpForm').on('submit', events.onSignUp)
   $('#signInForm').on('submit', events.onSignIn)
   $('#password_change').on('submit', events.onChangePassword)

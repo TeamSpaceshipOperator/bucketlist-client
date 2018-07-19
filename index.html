@@ -12,55 +12,133 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="container">
-      <h1>Bucketlist</h1>
 
-<div class="signed-out-view">
+<!-- START NAVBAR -->
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right ml-auto">
+              <li class="nav-item signed-out-view">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle" ><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                <ul class="container-fluid form-wrapper dropdown-menu">
+                  <form id="sign-in-dropdown">
+                    <div class="form-group">
+                      <input class="form-control" name="credentials[email]" placeholder="Email" type="email">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" name="credentials[password]" placeholder="Password" type="password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item signed-out-view">
+                <a data-toggle="dropdown" class="nav-link dropdown-toggle" ><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                <ul class="container-fluid form-wrapper dropdown-menu">
+                  <form id="sign-up-dropdown">
+                    <div class="form-group">
+                      <input class="form-control" name="credentials[email]" placeholder="Email" type="email">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" name="credentials[password]" placeholder="Password" type="password">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" name="credentials[password_confirmation]" placeholder="Password Confirmation" type="password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item signed-in-view">
+        				<a data-toggle="dropdown" class="nav-link dropdown-toggle" ><span class="glyphicon glyphicon-edit"></span>Change Password</a>
+        				<ul class="dropdown-menu form-wrapper container-fluid">
 
-      <h3> User sign up </h3>
-      <form id="signUpForm">
-            <input name="credentials[email]" type="text" placeholder="email"><br>
-            <input name="credentials[password]" type="password" placeholder="password"><br>
-            <input name="credentials[password_confirmation]" type="password" placeholder="password_confirmation"><br>
-            <button type="submit"> Sign Up</button>
-            <p class="signUpFeedback"></p>
-          </form>
+        						<form id="change-password-dropdown">
+        							<div class="form-group" >
+                        <input class="form-control" name="passwords[old]" placeholder="Old Password" type="password">
+        							</div>
+        							<div class="form-group">
+        								<input class="form-control" name="passwords[new]" placeholder="New Password" type="password">
+        							</div>
+        							<input type="submit" class="btn btn-primary btn-block" value="Change Password">
+        						</form>
 
-          <h3>User sign In </h3>
+        				</ul>
+              </li>
 
-        <form id="signInForm">
-          <input name="credentials[email]" type="text" placeholder="email"><br>
-          <input name="credentials[password]" type="password" placeholder="password"><br>
-          <button type="submit"> Sign In</button>
-          <p class="signInFeedback"></p>
-        </form>
-      </div>
+                <li class="nav-item signed-in-view">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" ><span class="glyphicon glyphicon-log-out"></span>Sign out</a>
+          				<ul class="dropdown-menu form-wrapper">
 
-<div class="signed-in-view">
-    <p class="emailDisplay"></p>
-        <h3> Change Password </h3>
-    <form id="password_change">
-      <input type="text" name="passwords[old]" placeholder="Old Password"><br>
-      <input type="text" name="passwords[new]" placeholder="New Password"><br>
-      <button type="submit"> Submit</button>
-      <p class="changePasswordFeedback"></p>
-    </form>
-    <br>
-    <button id="sign-out" type="submit"> Sign Out</button>
+          						<form id="sign-out-dropdown">
+          							<div>
+                          Are you sure?
+          							</div>
+          							<input type="submit" class="btn btn-primary btn-block" value="Sign Out">
+          						</form>
 
-    <h3> Create a restaurant</h3>
-    <form id="create_restaurant">
-      <input name="restaurant[name]" type="text" placeholder="Name"><br>
-      <input name="restaurant[location]" type="text" placeholder="Location"><br>
-      <button type="submit"> Create</button>
-      <p class="createRestaurantFeedback"></p>
-    </form>
+          				</ul>
+          			</li>
 
-    <div id="create_content"></div>
+            </ul>
+            </div>
+        </nav>
+<!-- END NAVBAR -->
 
-<div class="content row col-sm-12">
-</div>
-</div>
-</div>
+<!-- BEGIN CONTENT -->
+      <div class="container-fluid row">
+<!-- BEGIN LEFT         -->
+        <div class="container col-sm-3">
+          <h1>Bucketlist</h1>
+
+          <div class="signed-out-view">
+
+            <h3> User sign up </h3>
+            <form id="signUpForm" class="SignUpFeedback">
+              <input name="credentials[email]" type="text" placeholder="email"><br>
+              <input name="credentials[password]" type="password" placeholder="password"><br>
+              <input name="credentials[password_confirmation]" type="password" placeholder="password_confirmation"><br>
+              <button type="submit"> Sign Up</button>
+            </form>
+
+            <h3>User sign In </h3>
+
+            <form id="signInForm" class="signInFeedback">
+              <input name="credentials[email]" type="text" placeholder="email"><br>
+              <input name="credentials[password]" type="password" placeholder="password"><br>
+              <button type="submit"> Sign In</button>
+            </form>
+          </div>
+
+          <div class="signed-in-view">
+
+            <h3> Password change </h3>
+            <form id="password_change" class="ChangePasswordFeedback">
+              <input type="text" name="passwords[old]" placeholder="Old Password"><br>
+              <input type="text" name="passwords[new]" placeholder="New Password"><br>
+              <button type="submit"> Submit</button>
+            </form>
+            <button id="sign-out" type="submit"> Sign Out</button>
+
+            <h3> Create a restaurant</h3>
+            <form id="create_restaurant">
+              <input name="restaurant[name]" type="text" placeholder="Name"><br>
+              <input name="restaurant[location]" type="text" placeholder="Location"><br>
+              <button type="submit"> Create</button>
+            </form>
+
+            <div id="create_content"></div>
+
+          </div>
+        </div>
+<!-- END LEFT         -->
+
+<!-- BEGIN RIGHT -->
+        <div class="container col-sm-9">
+          <div class="content row col-sm-12"><h1>Content</h1>
+          </div>
+        </div>
+        </div>
+<!-- END RIGHT         -->
+
     </body>
 </html>
