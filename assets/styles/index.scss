@@ -9,9 +9,21 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   // float: left;
   margin: 20px;
   width: 300px;
-  height: 400px;
+  // height: 400px;
 }
 
 .signed-in-view {
   display: none;
+}
+
+.handlebars-form-hider {
+  display: none;
+}
+
+.form-wrapper {
+  padding: 5px;
+}
+
+hr {
+  margin: 2px 0;
 }

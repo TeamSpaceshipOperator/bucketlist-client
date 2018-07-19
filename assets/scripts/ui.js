@@ -7,7 +7,7 @@ const signUpSuccess = function (signUpResponse) {
 }
 
 const signUpError = function () {
-  $('.SignUpFeedback').html('Email unavailable or password mismatch.')
+  $('.signUpFeedback').html('Email unavailable or password mismatch.')
   $('#signUpForm')[0].reset()
 }
 
@@ -25,18 +25,19 @@ const signInSuccess = function (response) {
   $('.signed-out-view').toggle()
 }
 
-const signInError = function () {
+const signInError = function (error) {
   $('.signInFeedback').html('Username or password is incorrect.')
   $('#signInForm')[0].reset()
+  console.error(error)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
-  $('.ChangePasswordFeedback').html('You have successfully changed your password.')
+  $('.changePasswordFeedback').html('You have successfully changed your password.')
   $('#password_change')[0].reset()
 }
 
 const changePasswordError = function () {
-  $('.ChangePasswordFeedback').html('Password is incorrect.')
+  $('.changePasswordFeedback').html('Current password is incorrect.')
   $('#password_change')[0].reset()
 }
 
@@ -45,6 +46,7 @@ const signOutSuccess = function (signOutResponse) {
   // $('#change-password-form').toggle()
   // $('#sign-out-button').toggle()
   // $('#sign-up-form').toggle()
+  $('.createRestaurantFeedback').html('')
   $('.emailDisplay').html('')
   $('.signInFeedback').html('')
   $('.ChangePasswordFeedback').html('')
@@ -57,6 +59,12 @@ const signOutSuccess = function (signOutResponse) {
 
 const createRestaurantSuccess = function (Response) {
   console.log('Response is ', Response)
+  $('.createRestaurantFeedback').html('')
+}
+
+const createRestaurantFailure = function (response) {
+  console.error(response)
+  $('.createRestaurantFeedback').html('Please fill both fields.')
 }
 
 const getRestaurantsSuccess = function (getRestaurantsResponse) {
@@ -69,16 +77,16 @@ const destroyRestaurantSuccess = function (response) {
   console.log('destroy restaurant response is ', response)
 }
 
-const deleteRestaurantFailure = function () {
-  console.log('restaurant was not deleted')
-}
+// const deleteRestaurantFailure = function () {
+//   console.log('restaurant was not deleted')
+// }
 
 const updateRestaurantSuccess = function (updateRestaurantResponse) {
   console.log('update success is ', updateRestaurantResponse)
 }
 
-const updateRestaurantFail = function () {
-  console.log('res update failed here')
+const updateRestaurantFail = function (error) {
+  console.error(error)
 }
 
 const viewRestaurantSuccess = function (viewRestaurantResponse) {
@@ -96,6 +104,9 @@ const searchSuccess = function (searchSuccessResponse) {
 
 const searchFail = function (searchFailResponse) {
   console.log('the search failed here ', searchFailResponse)
+
+const viewRestaurantFailure = function (error) {
+  console.error(error)
 }
 
 module.exports = {
@@ -109,11 +120,12 @@ module.exports = {
   createRestaurantSuccess,
   getRestaurantsSuccess,
   destroyRestaurantSuccess,
-  deleteRestaurantFailure,
+  // deleteRestaurantFailure,
   updateRestaurantSuccess,
   updateRestaurantFail,
   viewRestaurantSuccess,
   viewRestaurantFailure,
   searchSuccess,
   searchFail
+  createRestaurantFailure
 }

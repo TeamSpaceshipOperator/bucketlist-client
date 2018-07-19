@@ -16,6 +16,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   authApi.signIn(data)
     .then(ui.signInSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.signInError)
 }
 
@@ -37,14 +38,14 @@ const onSignOut = function (event) {
 const onCreateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('getform data is ', data)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.createRestaurantFailure)
 }
 
-const onGetAllRestaurants = function (event) {
-  event.preventDefault()
+const onGetAllRestaurants = function () {
+  // event.preventDefault()
   authApi.getRestaurants()
     .then(ui.getRestaurantsSuccess)
     .catch(ui.getRestaurantsFailure)
@@ -53,36 +54,35 @@ const onGetAllRestaurants = function (event) {
 const onDestroyRestaurant = function (event) {
   event.preventDefault()
   const data = $(this).data('id')
-  console.log('this is', this.data)
-  console.log('data is, ', data)
   authApi.destroyRestaurant(data)
     .then(ui.destroyRestaurantSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.destroyRestaurantFailure)
 }
 
-const onDeleteRestaurant = function (event) {
-  console.log('event for delete is ', event)
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log('second event for delete is ', data)
-  authApi.destroyRestaurant(data)
-    .then(ui.deleteRestaurantSuccess)
-    .catch(ui.deleteRestaurantFailure)
-}
+// const onDeleteRestaurant = function (event) {
+//   console.log('event for delete is ', event)
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log('second event for delete is ', data)
+//   authApi.destroyRestaurant(data)
+//     .then(ui.deleteRestaurantSuccess)
+//     .catch(ui.deleteRestaurantFailure)
+// }
 
 const onUpdateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('update for restaurant is ', data)
-  authApi.updateRestaurant(data)
+  const id = $(this).data('id')
+  authApi.updateRestaurant(data, id)
     .then(ui.updateRestaurantSuccess)
+    .then(onGetAllRestaurants)
     .catch(ui.updateRestaurantFail)
 }
 
 const onViewRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('the restaurant for view is ', data)
   authApi.getRestaurant(data)
     .then(ui.viewRestaurantSuccess)
     .catch(ui.viewRestaurantFailure)
@@ -95,6 +95,11 @@ const onSearchRestaurant = function (event) {
   authApi.searchRestaurant(data)
     .then(ui.searchSuccess)
     .catch(ui.searchFail)
+  
+const showUpdateForm = function (event) {
+  event.preventDefault()
+  $('.handlebars-form-hider').show()
+  $('.handlebars-display').hide()
 }
 
 module.exports = {
@@ -109,4 +114,5 @@ module.exports = {
   onViewRestaurant,
   onSearchRestaurant,
   onDeleteRestaurant
+  showUpdateForm
 }

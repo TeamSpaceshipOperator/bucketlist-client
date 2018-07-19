@@ -49,11 +49,11 @@ const getRestaurant = function (data) {
   })
 }
 
-const updateRestaurant = function (data) {
+const updateRestaurant = function (data, id) {
   // console.log('api says data is ', data)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/restaurants/' + data.id,
+    url: config.apiUrl + '/restaurants/' + id,
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
