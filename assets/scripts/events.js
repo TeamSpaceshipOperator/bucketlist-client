@@ -54,6 +54,14 @@ const onGetAllRestaurants = function () {
     .catch(ui.getRestaurantsFailure)
 }
 
+const onGetMyRestaurants = function (event) {
+  console.log('clicked')
+  event.preventDefault()
+  authApi.getRestaurants()
+    .then(ui.getRestaurantsSuccess)
+    .catch(ui.getRestaurantsFailure)
+}
+
 const onDestroyRestaurant = function (event) {
   event.preventDefault()
   const data = $(this).data('id')
@@ -126,6 +134,7 @@ module.exports = {
   onUpdateRestaurant,
   onViewRestaurant,
   onSearchRestaurant,
-  showUpdateForm
+  showUpdateForm,
+  onGetMyRestaurants
   // onAddRestaurant
 }
