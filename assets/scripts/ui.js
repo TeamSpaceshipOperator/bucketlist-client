@@ -15,7 +15,6 @@ const signUpError = function () {
 }
 
 const signInSuccess = function (response) {
-  console.log('res, ', response)
   store.user = response.user
   $('.signInFeedback').html('')
   // $('#sign-in-form').toggle()
@@ -64,7 +63,6 @@ const signOutSuccess = function (signOutResponse) {
 }
 
 const createRestaurantSuccess = function (Response) {
-  console.log('Response is ', Response)
   $('#add-success').modal()
 }
 
@@ -74,21 +72,14 @@ const createRestaurantFailure = function (response) {
 }
 
 const getRestaurantsSuccess = function (getRestaurantsResponse) {
-  console.log('getRestaurantsResponse is ', getRestaurantsResponse)
   const showRestaurantsHtml = showRestaurantList({ restaurants: getRestaurantsResponse.restaurants })
   $('.content').html(showRestaurantsHtml)
 }
 
 const destroyRestaurantSuccess = function (response) {
-  console.log('destroy restaurant response is ', response)
 }
 
-// const deleteRestaurantFailure = function () {
-//   console.log('restaurant was not deleted')
-// }
-
 const updateRestaurantSuccess = function (updateRestaurantResponse) {
-  console.log('update success is ', updateRestaurantResponse)
 }
 
 const updateRestaurantFail = function (error) {
@@ -96,13 +87,10 @@ const updateRestaurantFail = function (error) {
 }
 
 const viewRestaurantSuccess = function (viewRestaurantResponse) {
-  console.log('view res succeeded here', viewRestaurantResponse)
   $('.view_row').html(viewRestaurantResponse.restaurant.name)
 }
 
 const searchSuccess = function (searchResponse) {
-  console.log('search response is ', searchResponse)
-  console.log('businessess is ', searchResponse.search.jsonBody.businesses)
   let showSearchHtml
   if (searchResponse.search.jsonBody.businesses.length === 0) {
     showSearchHtml = '<h3>Search contains 0 Results</h3>'
@@ -114,7 +102,6 @@ const searchSuccess = function (searchResponse) {
 }
 
 const searchFail = function (searchFailResponse) {
-  console.log('the search failed here ', searchFailResponse)
 }
 
 const viewRestaurantFailure = function (error) {

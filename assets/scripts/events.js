@@ -51,7 +51,6 @@ const onGetAllRestaurants = function () {
 }
 
 const onGetMyRestaurants = function (event) {
-  console.log('clicked')
   event.preventDefault()
   authApi.getRestaurants()
     .then(ui.getRestaurantsSuccess)
@@ -71,7 +70,6 @@ const onUpdateRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   const id = $(this).data('id')
-  console.log('update id is ', id)
   authApi.updateRestaurant(data, id)
     .then(ui.updateRestaurantSuccess)
     .then(onGetAllRestaurants)

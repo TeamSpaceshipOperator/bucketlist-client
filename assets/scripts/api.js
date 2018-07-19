@@ -49,7 +49,6 @@ const getRestaurant = function (data) {
 }
 
 const updateRestaurant = function (data, id) {
-  console.log('api says data is ', data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/restaurants/' + id,
