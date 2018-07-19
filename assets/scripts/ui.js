@@ -105,6 +105,7 @@ const searchSuccess = function (searchResponse) {
   console.log('businessess is ', searchResponse.search.jsonBody.businesses)
   const showSearchHtml = showSearchList({ restaurants: searchResponse.search.jsonBody.businesses })
   $('.content').html(showSearchHtml)
+  $('#rest_search')[0].reset()
 }
 
 const searchFail = function (searchFailResponse) {
