@@ -31,7 +31,7 @@ const searchRestaurant = function (data) {
   console.log('data is  ', data)
   return $.ajax({
     method: 'GET',
-    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${data.location.location}`,
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${data.location.location}&&term=${data.term.term}`,
     data: data,
     headers: {
       Authorization: 'Bearer w5V24zygjERXy-MmDuM6-vfTfxqF818wsWfp4y0h8r5llu3FWQ6sIjNTLRfpJ5U7C_nHF1R3T4e-xEU8fp8AWZMMeW_UJiOHfaLlhsLRaDZhzbKrT_30X6uGsWFPW3Yx'

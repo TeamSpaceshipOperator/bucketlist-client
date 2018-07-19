@@ -107,5 +107,6 @@ module.exports = {
   onDestroyRestaurant,
   onUpdateRestaurant,
   onViewRestaurant,
-  onSearchRestaurant
+  onSearchRestaurant,
+  onDeleteRestaurant
 }
