@@ -103,12 +103,13 @@ const viewRestaurantSuccess = function (viewRestaurantResponse) {
 const searchSuccess = function (searchResponse) {
   console.log('search response is ', searchResponse)
   console.log('businessess is ', searchResponse.search.jsonBody.businesses)
-  const showSearchHtml = showSearchList({ restaurants: searchResponse.search.jsonBody.businesses })
+  let showSearchHtml
+  if (searchResponse.search.jsonBody.businesses.length === 0) {
+    showSearchHtml = '<h3>Search contains 0 Results</h3>'
+  } else {
+    showSearchHtml = showSearchList({ restaurants: searchResponse.search.jsonBody.businesses })
+  }
   $('.content').html(showSearchHtml)
-  // $('.handlebars-form-submit').on('click', (e) => {
-  //   e.preventDefault()
-  //   console.log("e is ", e)
-  // })
   $('#rest_search')[0].reset()
 }
 
