@@ -36,11 +36,8 @@ const onSignOut = function (event) {
 }
 
 const onCreateRestaurant = function (event) {
-  console.log('first event happens', event)
-
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('add restaurant data gives ', data)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -94,7 +91,6 @@ const onViewRestaurant = function (event) {
 const onSearchRestaurant = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('i was trying to search for ', data)
   authApi.searchRestaurant(data)
     .then(ui.searchSuccess)
     .catch(ui.searchFail)

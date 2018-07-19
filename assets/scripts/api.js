@@ -28,7 +28,6 @@ const getRestaurants = function () {
 }
 
 const searchRestaurant = function (data) {
-  console.log('data is  ', data)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/search',
@@ -50,7 +49,7 @@ const getRestaurant = function (data) {
 }
 
 const updateRestaurant = function (data, id) {
-  // console.log('api says data is ', data)
+  console.log('api says data is ', data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/restaurants/' + id,
@@ -62,7 +61,6 @@ const updateRestaurant = function (data, id) {
 }
 
 const destroyRestaurant = function (data) {
-  console.log('delete res data is ', data)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/restaurants/' + data,
@@ -74,7 +72,6 @@ const destroyRestaurant = function (data) {
 
 // Auth requests below
 const signUp = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
@@ -82,7 +79,6 @@ const signUp = function (data) {
   })
 }
 const signIn = function (data) {
-  console.log(data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
