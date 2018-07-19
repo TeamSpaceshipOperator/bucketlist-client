@@ -27,4 +27,5 @@ $(() => {
   $('#update_restaurant').on('submit', events.onUpdateRestaurant)
   $('#view_restaurant').on('submit', events.onViewRestaurant)
   $('#rest_search').on('submit', events.onSearchRestaurant)
+  $('#my-list-button').on('click', events.onGetMyRestaurants)
 })

@@ -40,12 +40,19 @@ const onCreateRestaurant = function (event) {
   const data = getFormFields(event.target)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
-    .then(onGetAllRestaurants)
     .catch(ui.createRestaurantFailure)
 }
 
 const onGetAllRestaurants = function () {
   // event.preventDefault()
+  authApi.getRestaurants()
+    .then(ui.getRestaurantsSuccess)
+    .catch(ui.getRestaurantsFailure)
+}
+
+const onGetMyRestaurants = function (event) {
+  console.log('clicked')
+  event.preventDefault()
   authApi.getRestaurants()
     .then(ui.getRestaurantsSuccess)
     .catch(ui.getRestaurantsFailure)
@@ -122,6 +129,7 @@ module.exports = {
   onUpdateRestaurant,
   onViewRestaurant,
   onSearchRestaurant,
-  showUpdateForm
+  showUpdateForm,
+  onGetMyRestaurants
   // onAddRestaurant
 }
