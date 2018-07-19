@@ -7,8 +7,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   border-color: #000;
   border: 2px;
   // float: left;
-  margin: 0px 20px 40px 20px;
-  width: 300px;
+  margin: 0px 12px 24px 12px;
+  width: 290px;
   // height: 500px;
 }
 
@@ -34,5 +34,9 @@ body {
 
 .left-box {
   background-color: #3590F3;
-  height: 350px;
+  height: 360px;
+}
+
+.top-spacer {
+  height: 19px;
 }
