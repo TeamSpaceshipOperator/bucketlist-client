@@ -132,10 +132,7 @@ module.exports = {
   updateRestaurantFail,
   viewRestaurantSuccess,
   viewRestaurantFailure,
-<<<<<<< HEAD
   searchSuccess,
   searchFail,
-=======
->>>>>>> Avoiding merge conflict
   createRestaurantFailure
 }
