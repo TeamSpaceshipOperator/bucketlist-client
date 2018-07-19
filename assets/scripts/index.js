@@ -20,6 +20,7 @@ $(() => {
   $('.content').on('click', '.delete-button', events.onDestroyRestaurant)
   $('.content').on('submit', '.handlebars-form', events.onUpdateRestaurant)
   $('.content').on('click', '.handlebars-update-button', events.showUpdateForm)
+  $('.content').on('submit', '.handlebars-add-button', events.onCreateRestaurant)
 
   $('#delete_restaurant').on('submit', events.onDeleteRestaurant)
   $('#update_restaurant').on('submit', events.onUpdateRestaurant)

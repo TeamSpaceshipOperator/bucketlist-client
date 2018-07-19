@@ -36,8 +36,10 @@ const onSignOut = function (event) {
 }
 
 const onCreateRestaurant = function (event) {
+  console.log('first event happens', event)
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('add restaurant data gives ', data)
   authApi.createRestaurant(data)
     .then(ui.createRestaurantSuccess)
     .then(onGetAllRestaurants)
@@ -103,6 +105,15 @@ const showUpdateForm = function (event) {
   $('.handlebars-display').hide()
 }
 
+// const onAddRestaurant = function (event) {
+//   console.log('event is ', event)
+//   event.preventDefault()
+//   authApi.createRestaurant(data)
+//   console.log('this is what we are adding as ', data)
+//     .then(ui.addSucess)
+//     .catch(ui.addFail)
+// }
+
 module.exports = {
   onSignUp,
   onSignIn,
@@ -115,4 +126,5 @@ module.exports = {
   onViewRestaurant,
   onSearchRestaurant,
   showUpdateForm
+  // onAddRestaurant
 }
