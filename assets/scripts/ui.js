@@ -105,6 +105,10 @@ const searchSuccess = function (searchResponse) {
   console.log('businessess is ', searchResponse.search.jsonBody.businesses)
   const showSearchHtml = showSearchList({ restaurants: searchResponse.search.jsonBody.businesses })
   $('.content').html(showSearchHtml)
+  // $('.handlebars-form-submit').on('click', (e) => {
+  //   e.preventDefault()
+  //   console.log("e is ", e)
+  // })
   $('#rest_search')[0].reset()
 }
 

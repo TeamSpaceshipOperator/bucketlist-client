@@ -1,28 +1,38 @@
 {{#each restaurants as |restaurant|}}
 
  <div class="display col-sm-12" data-id="{{restaurant._id}}">
-   <form class="handlebars-form" data-id="{{restaurant._id}}">
-   <div class="row">
-     <div class="col-sm-11"></div>
-     <div class="col align-self-end"><a href="#" class="delete-button" data-id="{{restaurant._id}}"><span class="glyphicon glyphicon-remove"></span></a></div>
-
-     <div class="col-sm-1 glyphicon glyphicon-cutlery"></div>
-   <div class="col-sm-11">
-     <p class="handlebars-display">{{restaurant.name}}</p>
-     <input class="handlebars-form-hider" name="restaurant[name]" type="text" placeholder="{{restaurant.name}}">
+     <div class="row">
+       <div class="col-sm-11"></div>
+       <div class="col align-self-end"><a href="#" class="delete-button" data-id="{{restaurant._id}}"><span class="glyphicon glyphicon-remove"></span></a></div>
+       <div class="col-sm-10 offset-sm-1 search-img">
+         <img src={{restaurant.imgUrl}} height="180" width="270">
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-sm-1 glyphicon glyphicon-cutlery"></div>
+     <div class="col-sm-11">
+       <p class="handlebars-display">{{restaurant.name}}</p>
+       <input class="handlebars-form-hider" name="restaurant[name]" type="text" placeholder="{{restaurant.name}}">
+     </div>
    </div>
- </div>
-   <hr>
-   <div class="row">
-     <div class="col-sm-1 glyphicon glyphicon-map-marker">
+     <hr>
+     <div class="row">
+       <div class="col-sm-1 glyphicon glyphicon-map-marker">
+     </div>
+     <div class="col-sm-11">
+       <p class="handlebars-display">{{restaurant.location.address1}} <br> {{restaurant.location.city}}, {{restaurant.location.zip_code}}</p>
+       <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
+     </div>
    </div>
-   <div class="col-sm-11">
-     <p class="handlebars-display">{{restaurant.location}}</p>
-     <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
+   <form>
+     <div class="col-sm-11">
+       <p class="handlebars-display">{{restaurant.location}}</p>
+       <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
+     </div>
+     <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Update</button>
+     <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Update</button>
    </div>
-   <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Update</button>
-   <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Update</button>
-</div>
-</form>
+ </form>
+   </div>
 </div>
 {{/each}}

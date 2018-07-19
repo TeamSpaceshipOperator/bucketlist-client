@@ -1,7 +1,6 @@
 {{#each restaurants as |restaurant|}}
 
  <div class="display col-sm-12" data-id="{{restaurant._id}}">
-   <form class="handlebars-form" data-id="{{restaurant._id}}">
    <div class="row">
      <div class="col-sm-11"></div>
      <div class="col align-self-end"><a href="#" class="delete-button" data-id="{{restaurant._id}}"><span class="glyphicon glyphicon-remove"></span></a></div>
@@ -24,14 +23,13 @@
      <p class="handlebars-display">{{restaurant.location.address1}} <br> {{restaurant.location.city}}, {{restaurant.location.zip_code}}</p>
      <input class="handlebars-form-hider" name="restaurant[location]" type="text" placeholder="{{restaurant.location}}">
    </div>
-   <form class="handlebars-add-button">
-     <input type="hidden" name="name" value={{restaurant.name}}>
-<input type="hidden" name="location" value="{{restaurant.location.address1}}, {{restaurant.location.city}}, {{restaurant.location.city}}">
-<input type="hidden" name="imgUrl" value={{restaurant.image_url}}>
-   <button class="handlebars-Sum-button handlebars-display" type="submit" data-id="{{restaurant._id}}">Add to list</button>
+   <form class="handlebars-add-form">
+     <input type="hidden" name="restaurant[name]" value="{{restaurant.name}}">
+     <input type="hidden" name="restaurant[location]" value="{{restaurant.location.address1}}">
+     <input type="hidden" name="restaurant[imgUrl]" value="{{restaurant.image_url}}">
+   <button type="submit" class="handlebars-form-submit">Add to list</button>
  </form>
    <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Update</button>
 </div>
-</form>
 </div>
 {{/each}}
