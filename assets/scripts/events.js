@@ -94,9 +94,13 @@ const onSearchRestaurant = function (event) {
 
 const showUpdateForm = function (event) {
   event.preventDefault()
-  $('.handlebars-form-hider').show()
-  $('.handlebars-display').hide()
+  const data = $(this).data('id')
+  console.log('show form data is', data)
+  $('.handlebars-form-hider-' + data).show()
+  $('.handlebars-display-' + data).hide()
 }
+
+// handlebars-form-hider-{{restaurant._id}}
 
 module.exports = {
   onSignUp,

@@ -26,9 +26,9 @@
    <form class="add-note-form" data-id="{{restaurant._id}}">
 
        <p class="handlebars-display"><span class="glyphicon glyphicon-pencil"></span>{{restaurant.notes}}</p>
-       <input class="handlebars-form-hider" name="restaurant[notes]" type="text" placeholder="{{restaurant.notes}}">
-     <button class="handlebars-update-button handlebars-display" data-id="{{restaurant._id}}">Add Note</button>
-     <button class="handlebars-submit-button handlebars-form-hider" type="submit" data-id="{{restaurant._id}}">Submit Note</button>
+       <input class="handlebars-form-hider handlebars-form-hider-{{restaurant._id}}" name="restaurant[notes]" type="text" placeholder="{{restaurant.notes}}">
+     <button class="handlebars-update-button handlebars-display handlebars-display-{{restaurant._id}}" data-id="{{restaurant._id}}">Add Note</button>
+     <button class="handlebars-submit-button handlebars-form-hider handlebars-form-hider-{{restaurant._id}}" type="submit" data-id="{{restaurant._id}}">Submit Note</button>
    </div>
  </form>
 
