@@ -17,6 +17,7 @@ const signUpError = function () {
 const signInSuccess = function (response) {
   store.user = response.user
   $('.signInFeedback').html('')
+  $('.left-box').css('background-color', '#3590F3')
   // $('#sign-in-form').toggle()
   // $('#change-password-form').toggle()
   // $('#sign-out-button').toggle()
@@ -51,6 +52,7 @@ const signOutSuccess = function (signOutResponse) {
   // $('#change-password-form').toggle()
   // $('#sign-out-button').toggle()
   // $('#sign-up-form').toggle()
+  $('.left-box').css('background-color', '#62BFED')
   $('.createRestaurantFeedback').html('')
   $('.emailDisplay').html('')
   $('.signInFeedback').html('')
@@ -59,6 +61,7 @@ const signOutSuccess = function (signOutResponse) {
   $('.signed-in-view').toggle()
   $('.signed-out-view').toggle()
   $('#password_change')[0].reset()
+  $('#signUpForm')[0].reset()
   delete store.user
 }
 
